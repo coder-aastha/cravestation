@@ -1,6 +1,7 @@
 import bcrypt from "bcryptjs";
 import crypto from "crypto";
 import { Request, Response } from "express";
+import validator from "validator";
 import { sendWelcomeEmail } from "../mailtrap/email";
 import { User } from "../models/user.model";
 import { logActivity } from "../utils/activityLogger";
@@ -18,6 +19,12 @@ import uploadImageOnCloudinary from "../utils/imageUpload";
 export const signup = async (req: Request, res: Response) => {
   try {
     const { fullname, email, password, contact } = req.body;
+
+    if (!validator.isEmail(email)) {
+      return res
+        .status(400)
+        .json({ success: false, message: "Invalid email format" });
+    }
 
     let user = await User.findOne({ email });
     if (user) {
@@ -54,7 +61,7 @@ export const signup = async (req: Request, res: Response) => {
     });
   } catch (error) {
     console.log(error);
-    return res.status(500).json({ message: "Account created successfully" });
+    return res.status(500).json({ message: "Internal Server Error" });
   }
 };
 export const login = async (req: Request, res: Response) => {
