@@ -19,6 +19,10 @@ export const userLoginSchema = z.object({
 
 export type LoginInputState = z.infer<typeof userLoginSchema>;
 
+
+
+
+
 // import { z } from "zod";
 
 // export const userSignupSchema = z.object({
@@ -34,7 +38,7 @@ export type LoginInputState = z.infer<typeof userLoginSchema>;
 //     .email("Invalid email format"),
 //   password: z
 //     .string()
-//     .min(8, "Password must be at least 8 characters"), // Match bcrypt check
+//     .min(8, "Password must be at least 8 characters"), 
 //   contact: z
 //     .string()
 //     .regex(/^\d+$/, "Contact must be numeric")
@@ -50,7 +54,7 @@ export type LoginInputState = z.infer<typeof userLoginSchema>;
 //     .email("Invalid email address"),
 //   password: z
 //     .string()
-//     .min(8, "Password must be at least 8 characters"), // Match backend
+//     .min(8, "Password must be at least 8 characters"), 
 // });
 
 // export type LoginInputState = z.infer<typeof userLoginSchema>;
