@@ -72,6 +72,8 @@ export const sendPasswordResetEmail = async (email: string, resetURL: string) =>
   }
 };
 
+
+
 export const sendResetSuccessEmail = async (email: string) => {
   const mailOptions = {
     from: `"CraveStation" <aasthadahal312@gmail.com>`,

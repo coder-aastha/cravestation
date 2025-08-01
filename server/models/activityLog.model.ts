@@ -1,4 +1,3 @@
-// models/activityLog.model.ts
 import { Schema, model, Document, Types } from "mongoose";
 
 interface IActivityLog extends Document {

@@ -1,6 +1,6 @@
 // utils/activityLogger.ts
 import { Request } from "express";
-import { ActivityLog } from "../models/activityLog.mode";
+import { ActivityLog } from "../models/activityLog.model";
 
 
 export async function logActivity(req: Request, userId: string, action: string, metadata?: Record<string, any>) {
